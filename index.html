@@ -1,16 +1,34 @@
-<html>
-<script language="javascript">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Corazón I Love You</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
- var nombre;
+  <!-- El contenedor principal donde el script generará el corazón -->
+  <div id="ui"></div>
 
-nombre = prompt("dime tu nombre","");
+  <!-- Script que duplica los 100 elementos automáticamente -->
+  <script>
+    const ui = document.getElementById("ui");
+    const totalItems = 100;
 
-/* 
-\t = Para ponerlo al lado 
-\n = Para poner el abajo. 
-*/
+    for (let i = 1; i <= totalItems; i++) {
+      const love = document.createElement("div");
+      love.className = "love";
+      love.style.setProperty("--i", i);
+      love.innerHTML = `
+        <div class="love_horizontal">
+          <div class="love_vertical">
+            <div class="love_word">I love you</div>
+          </div>
+        </div>
+      `;
+      ui.appendChild(love);
+    }
+  </script>
 
-alert("\t"+nombre+" mamagranaso");
-
-</script>
+</body>
 </html>
